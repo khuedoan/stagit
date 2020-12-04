@@ -1,0 +1,17 @@
+#!/bin/sh
+
+rm -rf *
+
+cp -f /usr/local/share/doc/stagit/style.css .
+
+while true; do
+	stagit-index /srv/git/dotfiles.git > index.html
+	mkdir dotfiles
+	cd dotfiles && stagit /srv/git/dotfiles.git
+	ln -sf files.html index.html
+	ln -sf ../style.css style.css
+	ln -sf ../logo.png logo.png
+	ln -sf ../favicon.png favicon.png
+	cd ..
+	sleep 10
+done

@@ -25,7 +25,8 @@ COMPATSRC = \
 	strlcpy.c
 BIN = \
 	stagit\
-	stagit-index
+	stagit-index\
+	stagit-sync
 MAN1 = \
 	stagit.1\
 	stagit-index.1
